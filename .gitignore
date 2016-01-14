@@ -1,8 +1,9 @@
 node_modules
 images
+res.json
+result.json
 
 *.xml
-*.json
 *.jpg
 *.jpeg
 *.swp
