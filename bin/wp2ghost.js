@@ -8,8 +8,6 @@ if (args.length === 1 || (args.length === 2 && args[0].match(/node[\-\.\d]*$/) !
   process.exit();
 }
 
-console.log('args', args, args.indexOf('--with-images'));
-
 var withImages = false;
 
 if (args.indexOf('--with-images') != -1)
@@ -18,7 +16,6 @@ if (args.indexOf('--with-images') != -1)
 process.stdout.write("");
 var when = wp2ghost.fromFile(process.argv.slice(-1)[0], withImages);
 when.then(function(data) {
-  //console.log('done!');
   process.stdout.write(JSON.stringify(data).replace(/\\\\n/g, '\\n'));
 }, function(err) {
   process.stderr.write(JSON.stringify(err));
